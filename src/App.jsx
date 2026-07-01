@@ -38,8 +38,11 @@ function App() {
     };
   }, []);
 
+  const [sortBy, setSortBy] = useState('reviewDate'); // 'reviewDate' | 'releaseDate' | 'genre' | 'title'
+  const [sortOrder, setSortOrder] = useState('desc'); // 'asc' | 'desc'
+
   const filteredReviews = useMemo(() => {
-    return reviewsData.filter(review => {
+    let result = reviewsData.filter(review => {
       // Reviewer filter
       if (filterReviewer && review.reviewer !== filterReviewer) return false;
       
@@ -63,7 +66,32 @@ function App() {
 
       return true;
     });
-  }, [filterReviewer, searchQuery, filterGenre, filterYear]);
+
+    result.sort((a, b) => {
+      let valA = 0;
+      let valB = 0;
+
+      if (sortBy === 'reviewDate') {
+        valA = a.date ? new Date(a.date).getTime() : 0;
+        valB = b.date ? new Date(b.date).getTime() : 0;
+      } else if (sortBy === 'releaseDate') {
+        valA = a.tmdb?.releaseDate ? new Date(a.tmdb.releaseDate).getTime() : 0;
+        valB = b.tmdb?.releaseDate ? new Date(b.tmdb.releaseDate).getTime() : 0;
+      } else if (sortBy === 'genre') {
+        valA = a.tmdb?.genres?.[0] || 'Z'; // Fallback to Z
+        valB = b.tmdb?.genres?.[0] || 'Z';
+      } else if (sortBy === 'title') {
+        valA = a.title.toLowerCase();
+        valB = b.title.toLowerCase();
+      }
+
+      if (valA < valB) return sortOrder === 'asc' ? -1 : 1;
+      if (valA > valB) return sortOrder === 'asc' ? 1 : -1;
+      return 0;
+    });
+
+    return result;
+  }, [filterReviewer, searchQuery, filterGenre, filterYear, sortBy, sortOrder]);
 
   return (
     <div className="app-container">
@@ -101,6 +129,36 @@ function App() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
+            </div>
+          </div>
+
+          <div className="filter-group">
+            <h3>Sort By</h3>
+            <select 
+              className="filter-select"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
+              <option value="reviewDate">Review Date</option>
+              <option value="releaseDate">Movie Release Date</option>
+              <option value="genre">Genre</option>
+              <option value="title">Alphabetical</option>
+            </select>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+              <button 
+                className={`filter-btn ${sortOrder === 'asc' ? 'active' : ''}`}
+                onClick={() => setSortOrder('asc')}
+                style={{ flex: 1 }}
+              >
+                Ascending
+              </button>
+              <button 
+                className={`filter-btn ${sortOrder === 'desc' ? 'active' : ''}`}
+                onClick={() => setSortOrder('desc')}
+                style={{ flex: 1 }}
+              >
+                Descending
+              </button>
             </div>
           </div>
 
