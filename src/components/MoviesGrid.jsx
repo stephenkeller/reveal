@@ -1,7 +1,7 @@
 import React from 'react';
 import { Star, ExternalLink, Image as ImageIcon } from 'lucide-react';
 
-export default function MoviesGrid({ reviews }) {
+export default function MoviesGrid({ reviews, onSearchClick }) {
   if (reviews.length === 0) {
     return (
       <div style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '2rem' }}>
@@ -38,17 +38,44 @@ export default function MoviesGrid({ reviews }) {
           
           <div className="card-content">
             <div className="card-header">
-              <h2 className="movie-title">{review.title}</h2>
-              <div className="rating">
-                <Star size={16} fill="var(--accent-star)" />
-                <span>{review.rating}</span>
-              </div>
+               <h2 className="movie-title">{review.title}</h2>
+               <div className="rating">
+                 <Star size={16} fill="var(--accent-star)" />
+                 <span>{review.rating}</span>
+               </div>
             </div>
             
             <div className="movie-meta">
-              {review.tmdb?.director && <div>Dir: {review.tmdb.director}</div>}
+              {review.tmdb?.director && (
+                <div>
+                  Dir:{' '}
+                  <span 
+                    className="clickable-meta" 
+                    onClick={() => onSearchClick?.(review.tmdb.director)}
+                  >
+                    {review.tmdb.director}
+                  </span>
+                </div>
+              )}
               {review.date && <div>{review.date}</div>}
             </div>
+
+            {review.tmdb?.cast && review.tmdb.cast.length > 0 && (
+              <div className="movie-cast" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
+                Starring:{' '}
+                {review.tmdb.cast.slice(0, 3).map((actor, idx) => (
+                  <React.Fragment key={actor}>
+                    <span 
+                      className="clickable-meta"
+                      onClick={() => onSearchClick?.(actor)}
+                    >
+                      {actor}
+                    </span>
+                    {idx < Math.min(review.tmdb.cast.length, 3) - 1 ? ', ' : ''}
+                  </React.Fragment>
+                ))}
+              </div>
+            )}
 
             {review.reviewer && (
               <div className={`reviewer-badge ${review.reviewer.toLowerCase()}`}>

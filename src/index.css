@@ -386,3 +386,15 @@ a {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.clickable-meta {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.clickable-meta:hover {
+  color: var(--text-primary);
+  text-decoration-color: var(--text-primary);
+}

@@ -211,7 +211,7 @@ function App() {
         </aside>
 
         {activeTab === 'grid' ? (
-          <MoviesGrid reviews={filteredReviews} />
+          <MoviesGrid reviews={filteredReviews} onSearchClick={setSearchQuery} />
         ) : (
           <Analytics reviews={filteredReviews} />
         )}
