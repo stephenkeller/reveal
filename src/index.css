@@ -119,7 +119,7 @@ a {
   -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: var(--glass-shadow);
   position: sticky;
-  top: calc(100px + var(--spacing-xl));
+  top: calc(180px + var(--spacing-xl));
   z-index: 90;
 }
 
