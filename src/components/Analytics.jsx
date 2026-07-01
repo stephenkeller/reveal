@@ -96,9 +96,9 @@ export default function Analytics({ reviews }) {
               data={histogramData} 
               margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
               onClick={(state) => {
-                if (state && state.activePayload && state.activePayload.length > 0) {
-                  const rating = state.activePayload[0].payload.rating;
-                  setSelectedRating(selectedRating === rating ? null : rating);
+                if (state && state.activeLabel) {
+                  const rating = state.activeLabel;
+                  setSelectedRating(prev => prev === rating ? null : rating);
                 }
               }}
               style={{ cursor: 'pointer' }}
