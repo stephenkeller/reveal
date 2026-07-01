@@ -27,15 +27,19 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-async function fetchMovieData(title) {
+async function fetchMovieData(title, year) {
   try {
+    const params = {
+      api_key: TMDB_API_KEY,
+      query: title,
+    };
+    
+    if (year) {
+      params.primary_release_year = year;
+    }
+
     // 1. Search for the movie
-    const searchRes = await axios.get(`${TMDB_BASE_URL}/search/movie`, {
-      params: {
-        api_key: TMDB_API_KEY,
-        query: title,
-      },
-    });
+    const searchRes = await axios.get(`${TMDB_BASE_URL}/search/movie`, { params });
 
     if (searchRes.data.results && searchRes.data.results.length > 0) {
       const movie = searchRes.data.results[0];
@@ -115,10 +119,15 @@ function formatLink(link) {
 
       console.log(`Processing [${i + 1}/${rows.length}]: ${movieTitle}`);
       
-      // Clean title if it has year in parenthesis, e.g., "Deep Water (2026)"
+      let year = null;
+      const yearMatch = movieTitle.match(/\((\d{4})\)/);
+      if (yearMatch) {
+        year = yearMatch[1];
+      }
+      
       const cleanTitle = movieTitle.replace(/\(\d{4}\)/g, '').trim();
       
-      const tmdbData = await fetchMovieData(cleanTitle);
+      const tmdbData = await fetchMovieData(cleanTitle, year);
 
       enrichedData.push({
         id: i + 1,

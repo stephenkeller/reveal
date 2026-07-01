@@ -973,7 +973,7 @@
       "originalTitle": "Ready or Not: Here I Come",
       "releaseDate": "2026-03-19",
       "overview": "Moments after surviving an all-out attack from the Le Domas family, Grace discovers she’s reached the next level of the nightmarish game — and this time with her estranged sister Faith at her side. Grace has one chance to survive, keep her sister alive, and claim the High Seat of the Council that controls the world. Four rival families are hunting her for the throne, and whoever wins rules it all.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/13ZcJzSGEqVgDSqsS9U5EkQwPkV.jpg",
+      "posterPath": "https://image.tmdb.org/t/p/w500/jRf89HVEtBZiSnOXXWDhZOfuTwW.jpg",
       "genres": [
         "Thriller",
         "Horror",
@@ -2887,22 +2887,20 @@
     "date": "September 18, 2025",
     "link": "https://thereveal.film/in-review-a-big-bold-beautiful-journey-predators/",
     "tmdb": {
-      "tmdbId": 34851,
+      "tmdbId": 1400382,
       "title": "Predators",
       "originalTitle": "Predators",
-      "releaseDate": "2010-07-07",
-      "overview": "A group of cold-blooded killers find themselves trapped on an alien planet to be hunted by extraterrestrial Predators.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/wdniP8NDaJIydi1hMxhpbJMUfr6.jpg",
+      "releaseDate": "2025-09-19",
+      "overview": "In the mid-aughts, Dateline NBC's To Catch a Predator drew millions of weekly viewers to watch sting operations: men planning to meet minors for sex would instead be confronted by polished host Chris Hansen, then by the police — all on hidden camera.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/epjqcM33F3PKRZmj3KbpsXlJ3gY.jpg",
       "genres": [
-        "Science Fiction",
-        "Action",
-        "Thriller"
+        "Documentary"
       ],
-      "director": "Nimród Antal",
+      "director": "David Osit",
       "cast": [
-        "Adrien Brody",
-        "Topher Grace",
-        "Alice Braga"
+        "Chris Hansen",
+        "Mark de Rond",
+        "Dani Jayden"
       ]
     }
   },
@@ -4875,22 +4873,18 @@
     "date": "January 16, 2025",
     "link": "https://thereveal.film/in-review-wolf-man-im-still-here/",
     "tmdb": {
-      "tmdbId": 43939,
-      "title": "I'm Still Here",
-      "originalTitle": "I'm Still Here",
-      "releaseDate": "2010-09-10",
-      "overview": "I'm Still Here is a portrayal of a tumultuous year in the life of actor Joaquin Phoenix. With remarkable access, the film follows the Oscar-nominee as he announces his retirement from a successful film career in the fall of 2008 and sets off to reinvent himself as a hip-hop musician. The film is a portrait of an artist at a crossroads and explores notions of courage and creative reinvention, as well as the ramifications of a life spent in the public eye.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/h8c53OPv2miF6vzpVXQZX8jw1pJ.jpg",
-      "genres": [
-        "Music",
-        "Comedy",
-        "Drama"
-      ],
-      "director": "Casey Affleck",
+      "tmdbId": 1551447,
+      "title": "Pretend I'm Still Here",
+      "originalTitle": "Pretend I'm Still Here",
+      "releaseDate": "2025-09-29",
+      "overview": "Haunted by the disappearance of a close friend, Mike turns to filmmaking to make sense of the past. But as production unfolds, Mike realises he might just be chasing an ending that doesn't exist.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/6an8r5Moq56Z8XB0Jgaao69HPFT.jpg",
+      "genres": [],
+      "director": "Max Phillips",
       "cast": [
-        "Joaquin Phoenix",
-        "Antony Langdon",
-        "Carey Perloff"
+        "Ethan Kidney",
+        "Ollie Glen",
+        "Millie Hawking"
       ]
     }
   },
@@ -5615,7 +5609,7 @@
       "originalTitle": "Ready or Not: Here I Come",
       "releaseDate": "2026-03-19",
       "overview": "Moments after surviving an all-out attack from the Le Domas family, Grace discovers she’s reached the next level of the nightmarish game — and this time with her estranged sister Faith at her side. Grace has one chance to survive, keep her sister alive, and claim the High Seat of the Council that controls the world. Four rival families are hunting her for the throne, and whoever wins rules it all.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/13ZcJzSGEqVgDSqsS9U5EkQwPkV.jpg",
+      "posterPath": "https://image.tmdb.org/t/p/w500/jRf89HVEtBZiSnOXXWDhZOfuTwW.jpg",
       "genres": [
         "Thriller",
         "Horror",
@@ -11640,21 +11634,21 @@
     "date": "October 6, 2022",
     "link": "https://thereveal.film/in-review-triangle-of-sadness-hellraiser-smile/",
     "tmdb": {
-      "tmdbId": 9003,
+      "tmdbId": 338947,
       "title": "Hellraiser",
       "originalTitle": "Hellraiser",
-      "releaseDate": "1987-09-11",
-      "overview": "A hedonistic man finds a mysterious puzzle box that summons a group of gruesome beings known as the Cenobites. These otherworldly entities open the doors to a dominion where pain and pleasure are indivisible.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/3Z0oPHyLnk3Vx6ZMC1MiVwIrKhO.jpg",
+      "releaseDate": "2022-09-28",
+      "overview": "A young woman struggling with addiction comes into possession of an ancient puzzle box, unaware that its purpose is to summon the Cenobites, a group of sadistic supernatural beings from another dimension.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/f9ZAIUxTTk23vo1BC9Ur1Rx5c2E.jpg",
       "genres": [
         "Horror",
         "Thriller"
       ],
-      "director": "Clive Barker",
+      "director": "David Bruckner",
       "cast": [
-        "Andrew Robinson",
-        "Clare Higgins",
-        "Sean Chapman"
+        "Odessa A'zion",
+        "Drew Starkey",
+        "Jamie Clayton"
       ]
     }
   },
@@ -11884,21 +11878,22 @@
     "date": "September 15, 2022",
     "link": "https://thereveal.film/in-review-blonde-speak-no-evil/",
     "tmdb": {
-      "tmdbId": 1114513,
+      "tmdbId": 833339,
       "title": "Speak No Evil",
       "originalTitle": "Speak No Evil",
-      "releaseDate": "2024-09-11",
-      "overview": "When an American family is invited to spend the weekend at the idyllic country estate of a charming British family they befriended on vacation, what begins as a dream holiday soon warps into a snarled psychological nightmare.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/dA4N6uWOnEMgbxXwFX7qX7adzs8.jpg",
+      "releaseDate": "2022-03-17",
+      "overview": "A Danish family visits a Dutch family they met on a holiday. What was supposed to be an idyllic weekend slowly starts unraveling as the Danes try to stay polite in the face of unpleasantness.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/ukYuuFzPTumN1QNpQyz863bcNvr.jpg",
       "genres": [
         "Horror",
-        "Thriller"
+        "Thriller",
+        "Drama"
       ],
-      "director": "James Watkins",
+      "director": "Christian Tafdrup",
       "cast": [
-        "James McAvoy",
-        "Mackenzie Davis",
-        "Scoot McNairy"
+        "Morten Burian",
+        "Sidsel Siem Koch",
+        "Fedja van Huêt"
       ]
     }
   },
@@ -11936,22 +11931,22 @@
     "date": "September 8, 2022",
     "link": "https://thereveal.film/in-review-barbarian-pinocchio/",
     "tmdb": {
-      "tmdbId": 10895,
+      "tmdbId": 532639,
       "title": "Pinocchio",
       "originalTitle": "Pinocchio",
-      "releaseDate": "1940-02-23",
-      "overview": "When the gentle woodcarver Geppetto builds a marionette to be his substitute son, a benevolent fairy brings the toy to life. The puppet, named Pinocchio, is not yet a human boy. He must earn the right to be real by proving that he is brave, truthful, and unselfish.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/bnZJrLRnoQHpzEJdka1KYfsAF3N.jpg",
+      "releaseDate": "2022-09-07",
+      "overview": "A wooden puppet embarks on a thrilling adventure to become a real boy.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/zaZhjKrJeWczQ3AotKoQObppEbH.jpg",
       "genres": [
-        "Animation",
-        "Family",
-        "Fantasy"
+        "Fantasy",
+        "Adventure",
+        "Family"
       ],
-      "director": "Hamilton Luske",
+      "director": "Robert Zemeckis",
       "cast": [
-        "Dickie Jones",
-        "Cliff Edwards",
-        "Christian Rub"
+        "Joseph Gordon-Levitt",
+        "Tom Hanks",
+        "Benjamin Evan Ainsworth"
       ]
     }
   },
@@ -13412,21 +13407,22 @@
     "date": "March 17, 2022",
     "link": "https://thereveal.film/in-review-x-deep-water-the-outfit/",
     "tmdb": {
-      "tmdbId": 1127384,
+      "tmdbId": 619979,
       "title": "Deep Water",
       "originalTitle": "Deep Water",
-      "releaseDate": "2026-04-30",
-      "overview": "A group of international passengers on a flight from Los Angeles to Shanghai is forced to make an emergency landing in shark-infested waters. The terrified group is forced to work together and overcome their differences if they hope to escape their sinking plane and the frenzy of sharks drawn to the wreckage.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/kjcuS7xaRyqRjVaVcH4t0qHshuX.jpg",
+      "releaseDate": "2022-03-17",
+      "overview": "A well-to-do husband who allows his wife to have affairs in order to avoid a divorce becomes a prime suspect in the disappearance of her lovers.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/6yRMyWwjuhKg6IU66uiZIGhaSc8.jpg",
       "genres": [
-        "Thriller",
-        "Horror"
+        "Drama",
+        "Mystery",
+        "Thriller"
       ],
-      "director": "Renny Harlin",
+      "director": "Adrian Lyne",
       "cast": [
-        "Aaron Eckhart",
-        "Ben Kingsley",
-        "Molly Belle Wright"
+        "Ben Affleck",
+        "Ana de Armas",
+        "Tracy Letts"
       ]
     }
   },
@@ -13627,20 +13623,21 @@
     "date": "February 24, 2022",
     "link": "https://thereveal.film/in-review-cyrano-texas-chainsaw-massacre-studio-666/",
     "tmdb": {
-      "tmdbId": 9373,
-      "title": "The Texas Chainsaw Massacre",
-      "originalTitle": "The Texas Chainsaw Massacre",
-      "releaseDate": "2003-05-21",
-      "overview": "After picking up a traumatized young hitchhiker, five friends find themselves stalked and hunted by a chainsaw-wielding killer and his family of equally psychopathic killers.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/781px1eOtfVt1RdIsL4Dt1s3x7R.jpg",
+      "tmdbId": 632727,
+      "title": "Texas Chainsaw Massacre",
+      "originalTitle": "Texas Chainsaw Massacre",
+      "releaseDate": "2022-02-18",
+      "overview": "After nearly 50 years of hiding, Leatherface returns to terrorize a group of idealistic influencers who accidentally disrupt his carefully shielded world in a remote Texas town.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/7sKiGNWFM15WNyY7LYd5vmb3brO.jpg",
       "genres": [
-        "Horror"
+        "Horror",
+        "Thriller"
       ],
-      "director": "Marcus Nispel",
+      "director": "David Blue Garcia",
       "cast": [
-        "Jessica Biel",
-        "Jonathan Tucker",
-        "Andrew Bryniarski"
+        "Sarah Yarkin",
+        "Elsie Fisher",
+        "Mark Burnham"
       ]
     }
   },
@@ -13867,22 +13864,21 @@
     "date": "January 13, 2022",
     "link": "https://thereveal.film/in-review-scream-belle/",
     "tmdb": {
-      "tmdbId": 1159559,
-      "title": "Scream 7",
-      "originalTitle": "Scream 7",
-      "releaseDate": "2026-02-25",
-      "overview": "When a new Ghostface killer emerges in the quiet town where Sidney Prescott has built a new life, her darkest fears are realized as her daughter becomes the next target. Determined to protect her family, Sidney must face the horrors of her past to put an end to the bloodshed once and for all.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/jjyuk0edLiW8vOSnlfwWCCLpbh5.jpg",
+      "tmdbId": 646385,
+      "title": "Scream",
+      "originalTitle": "Scream",
+      "releaseDate": "2022-01-12",
+      "overview": "Twenty-five years after a streak of brutal murders shocked the quiet town of Woodsboro, a new killer has donned the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town’s deadly past.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/nD4M4Bx457ryLuKYpxFwQ2IBJ5w.jpg",
       "genres": [
         "Horror",
-        "Mystery",
-        "Crime"
+        "Mystery"
       ],
-      "director": "Kevin Williamson",
+      "director": "Tyler Gillett",
       "cast": [
-        "Neve Campbell",
-        "Courteney Cox",
-        "Isabel May"
+        "Melissa Barrera",
+        "Jenna Ortega",
+        "Mason Gooding"
       ]
     }
   },
