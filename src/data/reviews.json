@@ -10944,22 +10944,21 @@
     "date": "January 5, 2023",
     "link": "https://thereveal.film/in-review-m3gan-white-noise/",
     "tmdb": {
-      "tmdbId": 11804,
+      "tmdbId": 744594,
       "title": "White Noise",
       "originalTitle": "White Noise",
-      "releaseDate": "2005-01-07",
-      "overview": "An architect's desire to speak with his wife from beyond the grave using EVP (Electronic Voice Phenomenon), becomes an obsession with supernatural repercussions.",
-      "posterPath": "https://image.tmdb.org/t/p/w500/ncB9SvOclmXYALlcAsF1jRIuISl.jpg",
+      "releaseDate": "2022-11-25",
+      "overview": "Jack Gladney, professor of Hitler studies at The-College-on-the-Hill, husband to Babette, and father to four children/stepchildren, is torn asunder by a chemical spill from a rail car that releases an \"Airborne Toxic Event\" forcing Jack to confront his biggest fear - his own mortality.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/kesxNdLZlmGoTRspDHU1WgdEuGw.jpg",
       "genres": [
-        "Drama",
-        "Horror",
-        "Thriller"
+        "Comedy",
+        "Drama"
       ],
-      "director": "Geoffrey Sax",
+      "director": "Noah Baumbach",
       "cast": [
-        "Michael Keaton",
-        "Deborah Kara Unger",
-        "Chandra West"
+        "Adam Driver",
+        "Greta Gerwig",
+        "Don Cheadle"
       ]
     }
   },
