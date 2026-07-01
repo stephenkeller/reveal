@@ -1,7 +1,7 @@
 import React from 'react';
 import { Star, ExternalLink, Image as ImageIcon } from 'lucide-react';
 
-export default function MoviesGrid({ reviews, onSearchClick }) {
+export default function MoviesGrid({ reviews, onSearchClick, onGenreClick }) {
   if (reviews.length === 0) {
     return (
       <div style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '2rem' }}>
@@ -86,7 +86,13 @@ export default function MoviesGrid({ reviews, onSearchClick }) {
             {review.tmdb?.genres && (
               <div className="genres">
                 {review.tmdb.genres.map(g => (
-                  <span key={g} className="genre-tag">{g}</span>
+                  <span 
+                    key={g} 
+                    className="genre-tag"
+                    onClick={() => onGenreClick?.(g)}
+                  >
+                    {g}
+                  </span>
                 ))}
               </div>
             )}
