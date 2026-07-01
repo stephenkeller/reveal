@@ -101,8 +101,7 @@ async function main() {
     const workbook = XLSX.read(xlsxResponse.data, { type: 'buffer' });
     const sheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[sheetName];
-    
-    const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+    const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false });
     const headers = rows[0];
     
     const movieColIdx = headers.indexOf('Movie');
