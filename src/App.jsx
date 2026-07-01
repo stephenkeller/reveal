@@ -83,6 +83,9 @@ function App() {
       } else if (sortBy === 'title') {
         valA = a.title.toLowerCase();
         valB = b.title.toLowerCase();
+      } else if (sortBy === 'rating') {
+        valA = parseFloat(a.rating) || 0;
+        valB = parseFloat(b.rating) || 0;
       }
 
       if (valA < valB) return sortOrder === 'asc' ? -1 : 1;
@@ -141,6 +144,7 @@ function App() {
             >
               <option value="reviewDate">Review Date</option>
               <option value="releaseDate">Movie Release Date</option>
+              <option value="rating">Rating</option>
               <option value="genre">Genre</option>
               <option value="title">Alphabetical</option>
             </select>
