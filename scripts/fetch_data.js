@@ -26,6 +26,17 @@ const OVERRIDES = {
   'The Rose of Nevada': 1399525,
   'Nirvana The Band The Show The Movie': 1154538,
   'White Noise': 744594,
+  'Dracula (Luc Besson)': 1246049,
+  'Dracula (Radu Jude)': 1323409,
+  'The Beast': 914206,
+  '28 Days Later: The Bone Temple': 1272837,
+  'Loves Lies Bleeding': 948549,
+  'Napolean': 753342,
+  'The Fablemans': 804095,
+  'Keane': 13468,
+  'Mr. Malcom\'s List': 585379,
+  'The Matrix Ressurrections ': 624860,
+  'Tron:Ares': 533533
 };
 
 // Ensure output directory exists

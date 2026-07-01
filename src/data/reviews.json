@@ -1333,7 +1333,25 @@
     "reviewer": "Scott",
     "date": "February 5, 2026",
     "link": "https://thereveal.film/in-review-dracula-the-moment/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 1246049,
+      "title": "Dracula",
+      "originalTitle": "Dracula",
+      "releaseDate": "2025-07-30",
+      "overview": "In late 15th-century Eastern Europe, Prince Vlad II’s bride is brutally murdered. As a result, he renounces God and damns Heaven itself. Cursed with eternal life, Vlad is reborn as Dracula, an immortal warlord who defies fate in a blood-soaked crusade to wrench his lost love back from death.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/dYRqA50yd0nB3qBR7AtWEJJQ8q.jpg",
+      "genres": [
+        "Horror",
+        "Fantasy",
+        "Romance"
+      ],
+      "director": "Luc Besson",
+      "cast": [
+        "Caleb Landry Jones",
+        "Zoë Bleu Sidel",
+        "Christoph Waltz"
+      ]
+    }
   },
   {
     "id": 52,
@@ -1475,7 +1493,25 @@
     "reviewer": "Keith",
     "date": "January 15, 2026",
     "link": "https://thereveal.film/in-review-28-days-later-the-bone-temple-sound-of-falling-a-private-life/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 1272837,
+      "title": "28 Years Later: The Bone Temple",
+      "originalTitle": "28 Years Later: The Bone Temple",
+      "releaseDate": "2026-01-14",
+      "overview": "Dr. Kelson finds himself in a shocking new relationship - with consequences that could change the world as they know it - and Spike's encounter with Jimmy Crystal becomes a nightmare he can't escape.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/kK1BGkG3KAvWB0WMV1DfOx9yTMZ.jpg",
+      "genres": [
+        "Horror",
+        "Thriller",
+        "Science Fiction"
+      ],
+      "director": "Nia DaCosta",
+      "cast": [
+        "Ralph Fiennes",
+        "Jack O'Connell",
+        "Alfie Williams"
+      ]
+    }
   },
   {
     "id": 58,
@@ -2737,19 +2773,21 @@
     "date": "October 7, 2025",
     "link": "https://thereveal.film/in-review-tron-ares-the-perfect-neighbor/",
     "tmdb": {
-      "tmdbId": 1655864,
-      "title": "Tron: Ares - A Special Look",
-      "originalTitle": "Tron: Ares - A Special Look",
-      "releaseDate": "2025-09-23",
-      "overview": "The making of Tron: Ares",
-      "posterPath": null,
+      "tmdbId": 533533,
+      "title": "TRON: Ares",
+      "originalTitle": "TRON: Ares",
+      "releaseDate": "2025-10-08",
+      "overview": "A highly sophisticated Program called Ares is sent from the digital world into the real world on a dangerous mission, marking humankind's first encounter with A.I. beings.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/chpWmskl3aKm1aTZqUHRCtviwPy.jpg",
       "genres": [
-        "Science Fiction"
+        "Science Fiction",
+        "Adventure",
+        "Action"
       ],
-      "director": "Unknown",
+      "director": "Joachim Rønning",
       "cast": [
-        "Gillian Anderson",
         "Jared Leto",
+        "Greta Lee",
         "Evan Peters"
       ]
     }
@@ -7569,7 +7607,25 @@
     "reviewer": "Scott",
     "date": "March 8, 2024",
     "link": "https://thereveal.film/in-review-love-lies-bleeding-ricky/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 948549,
+      "title": "Love Lies Bleeding",
+      "originalTitle": "Love Lies Bleeding",
+      "releaseDate": "2024-03-07",
+      "overview": "Reclusive gym manager Lou falls hard for Jackie, an ambitious bodybuilder headed through town to Las Vegas in pursuit of her dream. But their love ignites violence, pulling them deep into the web of Lou’s criminal family.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/xImj8RLe39YK0lyVu9kXv7ApN8p.jpg",
+      "genres": [
+        "Crime",
+        "Romance",
+        "Thriller"
+      ],
+      "director": "Rose Glass",
+      "cast": [
+        "Kristen Stewart",
+        "Katy O'Brian",
+        "Ed Harris"
+      ]
+    }
   },
   {
     "id": 290,
@@ -8364,7 +8420,25 @@
     "reviewer": "Scott",
     "date": "November 22, 2023",
     "link": "https://thereveal.film/in-review-napoleon-maestro/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 753342,
+      "title": "Napoleon",
+      "originalTitle": "Napoleon",
+      "releaseDate": "2023-11-22",
+      "overview": "An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/ytFOXyghxLzAM4KZyazDdEkM66q.jpg",
+      "genres": [
+        "History",
+        "War",
+        "Romance"
+      ],
+      "director": "Ridley Scott",
+      "cast": [
+        "Joaquin Phoenix",
+        "Vanessa Kirby",
+        "Tahar Rahim"
+      ]
+    }
   },
   {
     "id": 321,
@@ -11179,7 +11253,23 @@
     "reviewer": "Scott",
     "date": "November 23, 2022",
     "link": "https://thereveal.film/in-review-the-fabelmans/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 804095,
+      "title": "The Fabelmans",
+      "originalTitle": "The Fabelmans",
+      "releaseDate": "2022-11-11",
+      "overview": "Growing up in post-World War II era Arizona, young Sammy Fabelman aspires to become a filmmaker as he reaches adolescence, but soon discovers a shattering family secret and explores how the power of films can help him see the truth.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/h7llKkqkkJtJrTOaDLuVeUYDQ7I.jpg",
+      "genres": [
+        "Drama"
+      ],
+      "director": "Steven Spielberg",
+      "cast": [
+        "Michelle Williams",
+        "Paul Dano",
+        "Seth Rogen"
+      ]
+    }
   },
   {
     "id": 429,
@@ -12087,7 +12177,24 @@
     "reviewer": "Keith",
     "date": "August 19, 2022",
     "link": "https://thereveal.film/in-review-keane-day-shift/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 13468,
+      "title": "Keane",
+      "originalTitle": "Keane",
+      "releaseDate": "2004-09-03",
+      "overview": "William Keane is barely able to cope. It has been six months since his six-year-old daughter was abducted from New York City’s Port Authority Bus Terminal while traveling with him. Repeatedly drawn to the site of the abduction, Keane wanders the bus station, compulsively replaying the events of that fateful day, as if hoping to change the outcome.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/9i0mdCNik76ULpWMQQ4YM6Ecpg1.jpg",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "director": "Lodge Kerrigan",
+      "cast": [
+        "Damian Lewis",
+        "Abigail Breslin",
+        "Amy Ryan"
+      ]
+    }
   },
   {
     "id": 464,
@@ -12576,7 +12683,24 @@
     "reviewer": "Keith",
     "date": "June 30, 2022",
     "link": "https://thereveal.film/in-review-flux-gourmet-mr-malcoms/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 585379,
+      "title": "Mr. Malcolm's List",
+      "originalTitle": "Mr. Malcolm's List",
+      "releaseDate": "2019-02-23",
+      "overview": "Set in early 1800s England, a young lady (Gemma Chan) engages in courtship with a mysterious wealthy suitor, Mr. Malcolm (Sope Dirisu), unaware of his unattainable list of demands for his future wife. Written by Suzanne Allain, based on her script and novel of the same name, and directed by Emma Holly Jones, the romantic comedy stars Sope Dirisu, Gemma Chan, Oliver Jackson-Cohen, and Freida Pinto.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/mb12xvApqdYKEUZlIaZEXXtKMVd.jpg",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "director": "Emma Holly Jones",
+      "cast": [
+        "Ṣọpẹ́ Dìrísù",
+        "Gemma Chan",
+        "Oliver Jackson-Cohen"
+      ]
+    }
   },
   {
     "id": 483,
@@ -14027,7 +14151,25 @@
     "reviewer": "Scott",
     "date": "December 23, 2021",
     "link": "https://thereveal.film/in-review-licorice-pizza-the-matrix/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 624860,
+      "title": "The Matrix Resurrections",
+      "originalTitle": "The Matrix Resurrections",
+      "releaseDate": "2021-12-16",
+      "overview": "Plagued by strange memories, Neo's life takes an unexpected turn when he finds himself back inside the Matrix.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/8c4a8kE7PizaGQQnditMmI1xbRp.jpg",
+      "genres": [
+        "Science Fiction",
+        "Action",
+        "Adventure"
+      ],
+      "director": "Lana Wachowski",
+      "cast": [
+        "Keanu Reeves",
+        "Carrie-Anne Moss",
+        "Yahya Abdul-Mateen II"
+      ]
+    }
   },
   {
     "id": 538,
