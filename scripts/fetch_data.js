@@ -35,7 +35,7 @@ const OVERRIDES = {
   'Napolean': 753342,
   'The Fablemans': 804095,
   'Keane': 13468,
-  'Mr. Malcom\'s List': 585379,
+  'Mr. Malcom\'s List': 716532,
   'The Matrix Ressurrections ': 624860,
   'Tron:Ares': 533533
 };
