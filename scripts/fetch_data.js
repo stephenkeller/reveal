@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
-import Papa from 'papaparse';
+import * as XLSX from 'xlsx';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 
@@ -10,7 +10,7 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const CSV_URL = 'https://docs.google.com/spreadsheets/d/142d91qR1faUzUc1tE17PAMa6OXvAzZd20b5IZpwjD68/export?format=csv&gid=0';
+const XLSX_URL = 'https://docs.google.com/spreadsheets/d/142d91qR1faUzUc1tE17PAMa6OXvAzZd20b5IZpwjD68/export?format=xlsx&gid=0';
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 if (!TMDB_API_KEY) {
@@ -35,7 +35,7 @@ async function fetchMovieData(title, year) {
     };
     
     if (year) {
-      params.primary_release_year = year;
+      params.year = year; // Use fuzzy year instead of primary_release_year to account for festival vs wide release
     }
 
     // 1. Search for the movie
@@ -80,12 +80,6 @@ async function fetchMovieData(title, year) {
   }
 }
 
-async function main() {
-  console.log('Downloading CSV from Google Sheets...');
-  try {
-    const csvResponse = await axios.get(CSV_URL);
-    const parsed = Papa.parse(csvResponse.data, { header: true, skipEmptyLines: true });
-    
 function formatLink(link) {
   if (!link) return link;
   if (link.startsWith('http')) return link;
@@ -100,41 +94,76 @@ function formatLink(link) {
   return `https://thereveal.film/${slug}/`;
 }
 
-    const rows = parsed.data;
-    console.log(`Found ${rows.length} rows.`);
+async function main() {
+  console.log('Downloading XLSX from Google Sheets...');
+  try {
+    const xlsxResponse = await axios.get(XLSX_URL, { responseType: 'arraybuffer' });
+    const workbook = XLSX.read(xlsxResponse.data, { type: 'buffer' });
+    const sheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[sheetName];
+    
+    const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+    const headers = rows[0];
+    
+    const movieColIdx = headers.indexOf('Movie');
+    const ratingColIdx = headers.indexOf('Star Rating');
+    const reviewerColIdx = headers.indexOf('Scott/Keith');
+    const dateColIdx = headers.indexOf('Date');
+    const linksColIdx = headers.indexOf('Links');
+
+    console.log(`Found ${rows.length - 1} rows.`);
 
     const enrichedData = [];
-
     let currentLink = '';
 
     // Process sequentially to respect API rate limits nicely
-    for (let i = 0; i < rows.length; i++) {
+    // Start at row 1 (skip headers)
+    for (let i = 1; i < rows.length; i++) {
       const row = rows[i];
-      const movieTitle = row['Movie'];
+      const movieTitle = row[movieColIdx];
       if (!movieTitle) continue;
 
-      if (row['Links']) {
-        currentLink = row['Links'];
+      // Extract hyperlink object directly from the Excel cell if available
+      const linkCellAddress = XLSX.utils.encode_cell({ c: linksColIdx, r: i });
+      const linkCell = worksheet[linkCellAddress];
+      
+      let parsedLink = '';
+      if (linkCell?.l?.Target) {
+        parsedLink = linkCell.l.Target; // It's a real hyperlink!
+      } else if (row[linksColIdx]) {
+        parsedLink = row[linksColIdx]; // Fallback to raw text
       }
 
-      console.log(`Processing [${i + 1}/${rows.length}]: ${movieTitle}`);
+      if (parsedLink) {
+        currentLink = parsedLink;
+      }
+
+      console.log(`Processing [${i}/${rows.length - 1}]: ${movieTitle}`);
       
       let year = null;
-      const yearMatch = movieTitle.match(/\((\d{4})\)/);
+      const yearMatch = String(movieTitle).match(/\((\d{4})\)/);
       if (yearMatch) {
         year = yearMatch[1];
+      } else {
+        const dateStr = row[dateColIdx];
+        if (dateStr) {
+          const dateMatch = String(dateStr).match(/\b(20\d{2})\b/);
+          if (dateMatch) {
+            year = dateMatch[1];
+          }
+        }
       }
       
-      const cleanTitle = movieTitle.replace(/\(\d{4}\)/g, '').trim();
+      const cleanTitle = String(movieTitle).replace(/\(\d{4}\)/g, '').trim();
       
       const tmdbData = await fetchMovieData(cleanTitle, year);
 
       enrichedData.push({
-        id: i + 1,
+        id: i,
         title: movieTitle,
-        rating: row['Star Rating'],
-        reviewer: row['Scott/Keith']?.trim(),
-        date: row['Date'],
+        rating: row[ratingColIdx],
+        reviewer: row[reviewerColIdx]?.trim(),
+        date: row[dateColIdx],
         link: formatLink(currentLink),
         tmdb: tmdbData
       });
