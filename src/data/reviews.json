@@ -115,7 +115,25 @@
     "reviewer": "Scott",
     "date": "June 18, 2026",
     "link": "https://thereveal.film/in-review-toy-story-5-the-death-of-robin-hood-rose-of-nevada-girls-like-girls/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 1399525,
+      "title": "Rose of Nevada",
+      "originalTitle": "Rose of Nevada",
+      "releaseDate": "2026-04-24",
+      "overview": "A mysterious boat returns to a village 30 years after vanishing. Two men join its crew hoping for better fortune. After one voyage, they find themselves transported back in time, mistaken for the original crew.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/rqHgjvD5HV0ojj4CEV31ztertPK.jpg",
+      "genres": [
+        "Science Fiction",
+        "Mystery",
+        "Drama"
+      ],
+      "director": "Mark Jenkin",
+      "cast": [
+        "George MacKay",
+        "Callum Turner",
+        "Francis Magee"
+      ]
+    }
   },
   {
     "id": 6,
@@ -1156,7 +1174,25 @@
     "reviewer": "Scott",
     "date": "February 19, 2026",
     "link": "https://thereveal.film/in-review-nirvanna-the-band-the-show-the-movie-how-to-make-a-killing/",
-    "tmdb": null
+    "tmdb": {
+      "tmdbId": 1154538,
+      "title": "Nirvanna the Band the Show the Movie",
+      "originalTitle": "Nirvanna the Band the Show the Movie",
+      "releaseDate": "2026-02-02",
+      "overview": "When their plan to book a show at the Rivoli goes horribly wrong, Matt and Jay accidentally travel back to the year 2008.",
+      "posterPath": "https://image.tmdb.org/t/p/w500/sm5TGX8WbnCd9Uo26cLyTxVwA1n.jpg",
+      "genres": [
+        "Comedy",
+        "Science Fiction",
+        "Adventure"
+      ],
+      "director": "Matt Johnson",
+      "cast": [
+        "Matt Johnson",
+        "Jay McCarrol",
+        "Ben Petrie"
+      ]
+    }
   },
   {
     "id": 46,

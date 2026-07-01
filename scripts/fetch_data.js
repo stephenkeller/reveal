@@ -21,30 +21,44 @@ if (!TMDB_API_KEY) {
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 const OUTPUT_FILE = path.join(__dirname, '../src/data/reviews.json');
 
+// Map of exact spreadsheet titles to their TMDB IDs to bypass finicky search
+const OVERRIDES = {
+  'The Rose of Nevada': 1399525,
+  'Nirvana The Band The Show The Movie': 1154538,
+  'White Noise': 744594,
+};
+
 // Ensure output directory exists
 const outputDir = path.dirname(OUTPUT_FILE);
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-async function fetchMovieData(title, year) {
+async function fetchMovieData(title, year, originalSpreadsheetTitle) {
   try {
-    const params = {
-      api_key: TMDB_API_KEY,
-      query: title,
-    };
-    
-    if (year) {
-      params.year = year; // Use fuzzy year instead of primary_release_year to account for festival vs wide release
+    let movieId = null;
+
+    if (OVERRIDES[originalSpreadsheetTitle]) {
+      movieId = OVERRIDES[originalSpreadsheetTitle];
+    } else {
+      const params = {
+        api_key: TMDB_API_KEY,
+        query: title,
+      };
+      
+      if (year) {
+        params.year = year; // Use fuzzy year instead of primary_release_year to account for festival vs wide release
+      }
+
+      // 1. Search for the movie
+      const searchRes = await axios.get(`${TMDB_BASE_URL}/search/movie`, { params });
+
+      if (searchRes.data.results && searchRes.data.results.length > 0) {
+        movieId = searchRes.data.results[0].id;
+      }
     }
 
-    // 1. Search for the movie
-    const searchRes = await axios.get(`${TMDB_BASE_URL}/search/movie`, { params });
-
-    if (searchRes.data.results && searchRes.data.results.length > 0) {
-      const movie = searchRes.data.results[0];
-      const movieId = movie.id;
-
+    if (movieId) {
       // 2. Fetch details including credits
       const detailsRes = await axios.get(`${TMDB_BASE_URL}/movie/${movieId}`, {
         params: {
@@ -155,7 +169,7 @@ async function main() {
       
       const cleanTitle = String(movieTitle).replace(/\(\d{4}\)/g, '').trim();
       
-      const tmdbData = await fetchMovieData(cleanTitle, year);
+      const tmdbData = await fetchMovieData(cleanTitle, year, movieTitle);
 
       enrichedData.push({
         id: i,
