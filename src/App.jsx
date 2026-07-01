@@ -11,6 +11,13 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterGenre, setFilterGenre] = useState(null);
   const [filterYear, setFilterYear] = useState(null);
+  const [selectedPeople, setSelectedPeople] = useState([]);
+
+  const handleAddPerson = (person) => {
+    if (!selectedPeople.includes(person)) {
+      setSelectedPeople([...selectedPeople, person]);
+    }
+  };
 
   // Extract all unique genres and years
   const { allGenres, allYears } = useMemo(() => {
@@ -64,6 +71,17 @@ function App() {
         if (!titleMatch && !dirMatch && !castMatch) return false;
       }
 
+      // Selected People filter
+      if (selectedPeople.length > 0) {
+        const matchesAll = selectedPeople.every(person => {
+          const query = person.toLowerCase();
+          const dirMatch = review.tmdb?.director?.toLowerCase().includes(query);
+          const castMatch = review.tmdb?.cast?.some(c => c.toLowerCase().includes(query));
+          return dirMatch || castMatch;
+        });
+        if (!matchesAll) return false;
+      }
+
       return true;
     });
 
@@ -94,7 +112,7 @@ function App() {
     });
 
     return result;
-  }, [filterReviewer, searchQuery, filterGenre, filterYear, sortBy, sortOrder]);
+  }, [filterReviewer, searchQuery, filterGenre, filterYear, sortBy, sortOrder, selectedPeople]);
 
   return (
     <div className="app-container">
@@ -133,6 +151,29 @@ function App() {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
+            {selectedPeople.length > 0 && (
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1rem' }}>
+                {selectedPeople.map(person => (
+                  <button 
+                    key={person} 
+                    className="filter-btn active"
+                    style={{ margin: 0, padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}
+                    onClick={() => setSelectedPeople(prev => prev.filter(p => p !== person))}
+                  >
+                    {person} &times;
+                  </button>
+                ))}
+                {selectedPeople.length > 1 && (
+                  <button 
+                    className="filter-btn" 
+                    style={{ margin: 0, padding: '0.25rem 0.5rem', fontSize: '0.8rem', border: 'none', color: 'var(--text-secondary)' }}
+                    onClick={() => setSelectedPeople([])}
+                  >
+                    Clear All
+                  </button>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="filter-group">
@@ -213,7 +254,7 @@ function App() {
         {activeTab === 'grid' ? (
           <MoviesGrid 
             reviews={filteredReviews} 
-            onSearchClick={setSearchQuery} 
+            onSearchClick={handleAddPerson} 
             onGenreClick={setFilterGenre}
           />
         ) : (
