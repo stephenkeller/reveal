@@ -92,7 +92,17 @@ export default function Analytics({ reviews }) {
 
         <div style={{ width: '100%', height: 400 }}>
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={histogramData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
+            <BarChart 
+              data={histogramData} 
+              margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
+              onClick={(state) => {
+                if (state && state.activePayload && state.activePayload.length > 0) {
+                  const rating = state.activePayload[0].payload.rating;
+                  setSelectedRating(selectedRating === rating ? null : rating);
+                }
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" vertical={false} />
               <XAxis 
                 dataKey="rating" 
@@ -112,12 +122,6 @@ export default function Analytics({ reviews }) {
               <Bar 
                 dataKey="count" 
                 radius={[4, 4, 0, 0]}
-                onClick={(data) => {
-                  if (data && data.rating) {
-                    setSelectedRating(selectedRating === data.rating ? null : data.rating);
-                  }
-                }}
-                style={{ cursor: 'pointer' }}
               >
                 {histogramData.map((entry, index) => (
                   <Cell 
