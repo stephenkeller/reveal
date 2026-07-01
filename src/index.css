@@ -118,6 +118,7 @@ a {
   box-shadow: var(--glass-shadow);
   position: sticky;
   top: calc(100px + var(--spacing-xl));
+  z-index: 90;
 }
 
 .filter-group {
