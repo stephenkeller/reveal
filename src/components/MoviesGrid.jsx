@@ -15,12 +15,24 @@ export default function MoviesGrid({ reviews }) {
       {reviews.map(review => (
         <div key={review.id} className="movie-card">
           <div className="poster-container">
-            {review.tmdb?.posterPath ? (
-              <img src={review.tmdb.posterPath} alt={review.title} className="poster" loading="lazy" />
+            {review.link ? (
+              <a href={review.link} target="_blank" rel="noopener noreferrer" style={{ display: 'block', width: '100%', height: '100%', cursor: 'pointer' }}>
+                {review.tmdb?.posterPath ? (
+                  <img src={review.tmdb.posterPath} alt={review.title} className="poster" loading="lazy" />
+                ) : (
+                  <div className="poster-placeholder">
+                    <ImageIcon size={48} opacity={0.2} />
+                  </div>
+                )}
+              </a>
             ) : (
-              <div className="poster-placeholder">
-                <ImageIcon size={48} opacity={0.2} />
-              </div>
+              review.tmdb?.posterPath ? (
+                <img src={review.tmdb.posterPath} alt={review.title} className="poster" loading="lazy" />
+              ) : (
+                <div className="poster-placeholder">
+                  <ImageIcon size={48} opacity={0.2} />
+                </div>
+              )
             )}
           </div>
           
