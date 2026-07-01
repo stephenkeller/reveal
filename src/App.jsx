@@ -9,13 +9,19 @@ function App() {
   const [activeTab, setActiveTab] = useState('grid'); // 'grid' | 'analytics'
   const [filterReviewer, setFilterReviewer] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [filterGenre, setFilterGenre] = useState(null);
+  const [filterGenres, setFilterGenres] = useState([]);
   const [filterYear, setFilterYear] = useState(null);
   const [selectedPeople, setSelectedPeople] = useState([]);
 
   const handleAddPerson = (person) => {
     if (!selectedPeople.includes(person)) {
       setSelectedPeople([...selectedPeople, person]);
+    }
+  };
+
+  const handleGenreClick = (genre) => {
+    if (!filterGenres.includes(genre)) {
+      setFilterGenres([...filterGenres, genre]);
     }
   };
 
@@ -54,7 +60,10 @@ function App() {
       if (filterReviewer && review.reviewer !== filterReviewer) return false;
       
       // Genre filter
-      if (filterGenre && (!review.tmdb || !review.tmdb.genres || !review.tmdb.genres.includes(filterGenre))) return false;
+      if (filterGenres.length > 0) {
+        const matchesAllGenres = filterGenres.every(genre => review.tmdb?.genres?.includes(genre));
+        if (!matchesAllGenres) return false;
+      }
 
       // Year filter
       if (filterYear) {
@@ -112,7 +121,7 @@ function App() {
     });
 
     return result;
-  }, [filterReviewer, searchQuery, filterGenre, filterYear, sortBy, sortOrder, selectedPeople]);
+  }, [filterReviewer, searchQuery, filterGenres, filterYear, sortBy, sortOrder, selectedPeople]);
 
   return (
     <div className="app-container">
@@ -239,15 +248,33 @@ function App() {
 
           <div className="filter-group">
             <h3>Genres</h3>
-            {allGenres.map(genre => (
+            {allGenres.map(genre => {
+              const isActive = filterGenres.includes(genre);
+              return (
+                <button 
+                  key={genre}
+                  className={`filter-btn ${isActive ? 'active' : ''}`}
+                  onClick={() => {
+                    if (isActive) {
+                      setFilterGenres(prev => prev.filter(g => g !== genre));
+                    } else {
+                      setFilterGenres(prev => [...prev, genre]);
+                    }
+                  }}
+                >
+                  {genre}
+                </button>
+              );
+            })}
+            {filterGenres.length > 0 && (
               <button 
-                key={genre}
-                className={`filter-btn ${filterGenre === genre ? 'active' : ''}`}
-                onClick={() => setFilterGenre(filterGenre === genre ? null : genre)}
+                className="filter-btn" 
+                style={{ margin: '0.5rem 0 0 0', padding: '0.25rem 0.5rem', fontSize: '0.8rem', border: 'none', color: 'var(--text-secondary)' }}
+                onClick={() => setFilterGenres([])}
               >
-                {genre}
+                Clear Genres
               </button>
-            ))}
+            )}
           </div>
         </aside>
 
@@ -255,7 +282,7 @@ function App() {
           <MoviesGrid 
             reviews={filteredReviews} 
             onSearchClick={handleAddPerson} 
-            onGenreClick={setFilterGenre}
+            onGenreClick={handleGenreClick}
           />
         ) : (
           <Analytics reviews={filteredReviews} />
